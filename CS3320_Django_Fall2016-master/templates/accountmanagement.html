@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Account Management : User is logged in -->
+<html>
+  <head>
+    <title>
+      {% block title %}
+      Account Management - Vibenjive
+      {% endblock %}
+    </title>
+     {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static '/css/template.css' %}" />
+     <link rel="stylesheet" type="text/css" href="{% static  '/css/accountmanagement.css' %}" />
+     <link rel="stylesheet" type="text/css" href="{% static '/css/updatepassword.css' %}" />
+     <link rel="stylesheet" type="text/css" href="{% static '/css/usersettings.css' %}" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="{% static 'js/template.js' %}"></script>
+ </head>
+  <body id="body">
+    <div class="menu">
+      <ul class="menu-nav">
+        <li><a class="menu-item" href={% url 'home' %}>Home</a></li>
+                <li>
+          <div class="dropdown">
+            <button class="dropbtn">Search</button>
+              <form action="{% url 'searchresults' %}" method ="get">
+                <div class="dropdown-content">
+                  <div class="searchbar">
+                    <input type="text" name="q" placeholder="Search for instrument, genre, or username..."><br>
+                    <input type="submit" value="Search" hidden>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </li>
+        <li><a class="menu-item" href="/uploadaudio/">Upload Audio</a></li>
+<!--        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Account Management</button>
+              <div class="dropdown-content">
+                <a href="#">Manage Audio</a>
+                <a href="{% url 'accountmanagement' %}">User Settings</a>
+              </div>
+          </div>
+        </li>
+-->        <li style="float:right"><a class="menu-item" href="{% url 'logout' %}">Logout</a></li>
+        <li style="float:right"><a class="menu-item">User: {{ user.get_username }}</a></li>
+        <li style="float:right"><a class="menu-item">
+          {% block content2 %}
+          {% endblock %}
+          </a>
+        </li>
+       </ul>
+    </div>
+    <div class="image">
+      <img src="{% static 'css/assets/templogo.png' %}" />
+    </div>
+    <div class="account-menu">
+        <ul class="account-nav">
+            <li><a class="account-item" href="{% url 'update_password' %}">Update Password</a></li>
+            <li><a class="account-item" href="{% url 'updateemail' %}">Update Email</a></li>
+            <li><a class="account-item" href="{% url 'updateinfo' %}">Update Info</a></li>
+            <li><a class="account-item" href="{% url 'deleteaccount' %}">Delete Account</a></li>
+        </ul>
+    </div>
+
+  <div class="testing"></div>
+
+  {% block content %}
+  {% endblock %}
+
+  </body>
+</html>

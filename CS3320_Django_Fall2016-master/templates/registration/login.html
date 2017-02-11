@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Homepage Template : User is logged in -->
+<html>
+  <head>
+    <title>
+      {% block title %}
+      Login - Vibenjive
+      {% endblock %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/template.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}" />
+  </head>
+  <body id="body">
+    <div class="menu">
+      <!-- Top Menu -->
+      <ul class="menu-nav">
+
+        <!-- Sign Up Form -->
+        <li style="float:left">
+          <div class="dropdown">
+            <button class="dropbtn">Sign Up</button>
+          <div class="dropdown-content">
+            <form method="post" action="">
+              {% csrf_token %}
+            <div class="container">
+              <label>Username</label>
+              <input type="text" placeholder="Required" name="username" required>
+
+              <label>First Name</label>
+              <input type="text" placeholder="Optional" name="first_name" >
+
+              <label>Last Name</label>
+              <input type="text" placeholder="Optional" name="last_name" >
+
+              <label>Password</label>
+              <input type="password" placeholder="Required" name="password" required>
+
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Required" name="password" required>
+
+              <label>Email</label>
+              <input type="email" placeholder="Required" name="email" required>
+
+              <label>Birthday</label>
+              <input type="date" name="birthday" required>
+
+              <label>Zip Code</label>
+              <input type="text" name="zipcode" required>
+
+              <button type="submit" class="main-buttons">Sign Up</button>
+            </div>
+
+            </form>
+            </div>
+          </div>
+        </li>
+
+        <!-- Login Form -->
+        {% block contentbase %}
+        <li style="float:left">
+          <div class="dropdown">
+            <button class="dropbtn">Login</button>
+          <div class="dropdown-content">
+            <form method="POST" action="{% 'views.auth_view' %}">
+              {% csrf_token %}
+            <div class="container">
+              <label>Username</label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+              <label>Password</label>
+              <input type="password" placeholder="Enter Password" name="pswd" required>
+              <button type="submit" class="main-buttons">Login</button>
+            </div>
+            <div class="container">
+              <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+            </form>
+            </div>
+          </div>
+        </li>
+       </ul>
+       {% endblock contentbase %}
+    </div>
+    <div class="image">
+      {% load static %}
+      <img src="{% static 'css/assets/templogo.png' %}" />
+    </div>
+  <div class="testing"></div>
+  </body>
+</html>

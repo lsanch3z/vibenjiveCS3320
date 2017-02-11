@@ -1,0 +1,31 @@
+/* Transparent Box */
+div.transbox {
+
+  margin: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #888888;
+  border: none;
+  border-radius: 25px;
+  opacity: .92;
+  overflow: scroll;
+}
+
+.centered {
+  width: 800px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Search Results Formatting */
+table.results {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+table.results, td.results, th.results {
+    border: 1px solid red;
+}

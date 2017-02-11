@@ -1,0 +1,47 @@
+
+/* Login / Sign Up Form */
+form {
+    width: 350px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=date] {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+/* Login and Sign up fields */
+label {
+  color: white;
+}
+
+button.main-buttons {
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: left;
+    padding-top: 16px;
+}

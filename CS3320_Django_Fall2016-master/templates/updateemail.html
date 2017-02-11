@@ -1,0 +1,25 @@
+{% extends "accountmanagement.html" %}
+
+{% block title %}
+  Update Email - Vibenjive
+{% endblock %}
+
+{% block content %}
+  <div class="centered" class="container">
+    <div class="transbox">
+      <form class="pass-form" action="/ch_email/" role="form" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="username" value="{{ user.get_username }}">
+        <label>New Email</label>
+        <input type="email" placeholder="Enter new E-mail" name="email1" required>
+        <label>Re-enter New Email</label>
+        <input type="email" placeholder="verify E-mail" name="email2" required>
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="submit" class="submit-button">Submit</button>
+        {% block content1 %}
+        {% endblock %}
+      </form>
+    </div>
+  </div>
+{% endblock %}

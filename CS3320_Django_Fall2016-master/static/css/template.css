@@ -1,0 +1,145 @@
+
+/* Background */
+#body {
+  background-color: black;
+  background-image: url("assets/live-gig.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  font-family: Courier;
+  z-index: -2
+}
+
+/* TEST */
+.testing {
+  height: 880px;
+}
+
+/* Logo */
+div.image {
+  float: left;
+  padding-top: 40px;
+  position: relative;
+  opacity: .6;
+  z-index: -3;
+}
+
+/* Navigation Menu */
+
+.menu ul {
+  list-style-type: none;
+  overflow: visible;
+  background-color: #333;
+  margin: 0;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: .8;
+  position: fixed;
+  border-spacing: inherit;
+}
+
+.menu .menu-nav li {
+  font-size: 15px;
+  float: left;
+}
+
+ .menu a.menu-item {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.menu a.menu-item:hover {
+  background-color: #111;
+  opacity: .5;
+}
+
+/* Dropdown Menu */
+/* Dropdown Button */
+.dropbtn {
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    opacity: .8;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    font-family: Courier;
+}
+
+/* The container <div> */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 10px;
+}
+
+/* Links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #111
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #111;
+}
+
+/* Search Box */
+.searchbar {
+  width: 420px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/* How it works */
+.how_it_works{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+input[type="date"], input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  border-radius: 25px;
+}

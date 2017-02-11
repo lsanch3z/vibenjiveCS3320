@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+
+{% block title %}Vibenjive - Upload Audio{% endblock %}
+
+{% block content %}
+  <div class="centered" class="container">
+   <div class="transbox">
+     <form class="pass-form" action="/add_music/" method ="post" role="form">
+       {% csrf_token %}
+       {% block content3 %}
+       {% endblock %}
+       <input type="hidden" name="username" value="{{ user.get_username }}">
+       <label>Link to musical reference material</label>
+       <input type="text" placeholder="Example: www.youtube.com/..." name="url" required>
+       <label>Song title or description</label>
+       <input type="text" placeholder="rock, pop, electronic, etc." name="title" required>
+       <label>What genre(s) would you use to describe this sample?</label>
+       <input type="text" placeholder="rock, pop, electronic, etc." name="genres" required>
+       <label>What instrument(s) did you play?</label>
+       <input type="text" placeholder="guitar, percussion, bass, etc" name="instruments" required>
+       <button type="submit" class="submit-button">Submit</button>
+     </form>
+   </div>
+  </div>
+{% endblock %}

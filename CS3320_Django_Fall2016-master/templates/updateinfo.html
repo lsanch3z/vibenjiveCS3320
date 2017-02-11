@@ -1,0 +1,26 @@
+{% extends "accountmanagement.html" %}
+
+{% block title %}Update Info{% endblock %}
+
+  <!-- Update User Information Form -->
+{% block content %}
+   <div class="centered" class="container">
+    <div class="transbox">
+	    <form class="pass-form" action="/ch_info/" method ="post" role="form">
+        {% csrf_token %}
+        <input type="hidden" name="username" value="{{ user.get_username }}">
+        <label>Update first name</label>
+        <input type="update" placeholder="{{ currentuser.first_name }}" name="first_name" required>
+        <label>Update last name</label>
+        <input type="update" placeholder= "{{ currentuser.last_name }}" name="last_name" required>
+        <label>Update Zip code</label>
+        <input type="update" placeholder="{{ currentuser.zipcode  }}" name="zipcode" required>
+		    <label>Update Genre</label>
+        <input type="update" placeholder="{{ currentuser.genres }}" name="genres" required>
+		    <label>Update Instruments</label>
+        <input type="update" placeholder="{{ currentuser.instruments }}" name="instruments" required>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

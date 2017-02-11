@@ -1,0 +1,60 @@
+div.transbox {
+  margin: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #888888;
+  border: none;
+  border-radius: 25px;
+  opacity: .92;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Password input */
+
+input[type=update] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+.pass-form form {
+  border: 3px solid white;
+  width: 350px;
+}
+
+.container {
+    padding: 16px;
+}
+
+button.submit-button {
+  background-color: green;
+  color: white;
+  padding: 14px 14px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 25px;
+  font-weight: bold;
+}
+button.delete-button {
+  background-color: darkred;
+  color: white;
+  padding: 14px 14px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 25px;
+  font-weight: bold;
+}

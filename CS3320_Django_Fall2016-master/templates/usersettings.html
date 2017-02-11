@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Homepage Template : User is logged in -->
+<html>
+  <head>
+    <title>
+      {% block title %}
+      User_Settings - Vibenjive
+      {% endblock %}</title>
+  </head>
+	{% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/css/template.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static '/css/accountmanagement.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static '/css/usersettings.css' %}" />
+  <body id="body">
+    <!-- Main Menu -->
+    <div class="menu">
+      <ul class="menu-nav">
+        <li><a class="menu-item" href="#home">Home</a></li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Search</button>
+             <form action="{% url 'searchresults' %}" method ="get">
+                <div class="dropdown-content">
+                  <div class="searchbar">
+                    <input type="text" name="q" placeholder="Search for instrument, genre, or username..."><br>
+                    <input type="submit" value="Search" hidden>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </li>
+        <li><a class="menu-item" href="#uploadaudio">Upload Audio</a></li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Account Management</button>
+              <div class="dropdown-content">
+                <a href="#">Manage Audio</a>
+                <a href="#">User Settings</a>
+              </div>
+          </div>
+        </li>
+        <li style="float:right"><a class="menu-item" href="#home">Logout</a></li>
+       </ul>
+    </div>
+    <div class="image">
+      <img src="css/assets/templogo.png" />
+    </div>
+  <div class="testing"></div>
+  <!-- Update User Information Form -->
+   <div class="centered" class="container">
+    <div class="transbox">
+	 <form class="pass-form" action="#updateaccount">
+        <label>Update first name</label>
+        <input type="text" placeholder="John" name="firstname" required>
+        <label>Update last name</label>
+        <input type="text" placeholder="Smith" name="lastname" required>
+        <label>Update Zip code</label>
+        <input type="text" placeholder="78748" name="zip" required>
+		<label>Update Genre</label>
+        <input type="text" placeholder="Metal, Hip Hop" name="Genre" required>
+		<label>Update Instruments</label>
+        <input type="text" placeholder="Guitar, Keyboard" name="Instrument" required>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+<<<<<<< HEAD
+  <!-- Footer - Account Settings Menu -->
+=======
+ <div class="testing"></div>
+
+
+  <div class="account-menu">
+      <ul class="account-nav">
+          <li><a class="account-item" href="#changepassword">Update Password</a></li>
+          <li><a class="account-item" href="#changepassword">Update Email</a></li>
+
+          <li><a class="account-item" href="#changepassword">Update Info</a></li>
+          <li><a class="account-item" href="#deleteaccount">Delete Account</a></li>
+      </ul>
+  </div>
+
+          <li><a class="account-item" href="#deleteaccount">Delete Account</a></li>
+      </ul>
+  </div>
+
+>>>>>>> origin/master
+  </body>
+</html>

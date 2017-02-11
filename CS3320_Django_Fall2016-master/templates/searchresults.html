@@ -1,0 +1,50 @@
+{% extends "template.html" %}
+
+   	{% block title %}
+      Search Results - Vibenjive
+      {% endblock %}
+
+  <!-- Search Results -->
+{% block content %}
+
+{{form}}
+  <div class="centered" class="container">
+   <div class="transbox">
+     <div class="results">
+       <table cellspacing="20">
+         {% block content2 %}
+         {% endblock %}
+	{% if object_lists %}
+         <tr style="text-align:center">
+           <td><b><u>Username</u></b></td>
+    	     <td><b><u>Title/Description</u></b></td>
+    	     <td><b><u>Genre</u></b></td>
+    	     <td><b><u>Instrument</u></b></td>
+    	     <td><b><u>URL</u></b></td>
+    	     <td><b><u>Connect</u></b></td>
+         </tr>
+		{%for list in object_lists %}
+		    <tr style="text-align:center">
+    		  <td>{{ list.username }}</td>
+    		  <td>{{ list.title }}</td>
+    		  <td>{{ list.genres }}</td>
+    		  <td>{{ list.instruments }}</td>
+    		  <td><a class="transition" href="{{ list.url }}" target="_blank">Link to audio</a></td>
+          <td>
+            <form action="/sendemail/" method ="post" role="form">
+              {% csrf_token %}
+              <input type="hidden" name="username1" value="{{ list.username }}">
+              <button type="submit" class="submit-button">Connect</button>
+            </form>
+          </td>
+        </tr>
+		{% endfor %}
+		{% else %}
+		<p>No results found.</p>
+		{% endif %}
+
+       </table>
+     </form>
+   </div>
+
+{% endblock %}

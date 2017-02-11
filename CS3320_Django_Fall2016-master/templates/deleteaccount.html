@@ -1,0 +1,27 @@
+{% extends "accountmanagement.html" %}
+
+{% block title %}
+      Delete Account - Vibenjive
+{% endblock %}
+
+{% block content %}
+  <div class="centered" class="container">
+    <div class="transbox">
+      <p>
+        Are you sure you want to delete your account?
+        <br />
+        <br />
+      </p>
+      <form method="post" class="pass-form" action="/del_user/" role="form">
+        {% csrf_token %}
+        <label>Password</label>
+        <input type="checkbox" required /> Yes, I'm sure. <br /> <br />
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="hidden" name="username" value="{{ user.get_username }}">
+        <button type="submit" class="submit-button">Submit</button>
+        {% block content1 %}
+        {% endblock %}
+      </form>
+    </div>
+  </div>
+{% endblock %}

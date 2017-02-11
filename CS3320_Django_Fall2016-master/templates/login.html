@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Homepage Template : User is logged in -->
+<html>
+  <head>
+    <title>
+      {% block title %}
+      Login - Vibenjive
+      {% endblock %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/template.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+  </head>
+  <body id="body">
+    <div class="menu">
+      <!-- Top Menu -->
+      <ul class="menu-nav">
+
+        <!-- Sign Up Form -->
+        <li style="float:left">
+          <div class="dropdown">
+            <button class="dropbtn">Sign Up</button>
+          <div class="dropdown-content">
+            <form method="post" action="/signup/req/" role="form">
+              {% csrf_token %}
+            <div class="container">
+              <label>Username</label>
+              <input type="text" placeholder="Required" name="username" value="" required>
+
+              <label>First Name</label>
+              <input type="text" placeholder="Optional" name="first_name" value="" >
+
+              <label>Last Name</label>
+              <input type="text" placeholder="Optional" name="last_name" value="" >
+
+              <label>Password</label>
+              <input type="password" placeholder="Required" name="password" value="" required>
+
+              <label>Email</label>
+              <input type="email" placeholder="Required" name="email" value="" required>
+
+<!--              <label>Birthday</label>
+              <input type="date" name="birthday" required>
+
+              <label>Zip Code</label>
+              <input type="text" name="zipcode" required>
+-->
+              <button type="submit" class="main-buttons">Sign Up</button>
+            </div>
+
+            </form>
+            </div>
+          </div>
+        </li>
+        <!-- Login Form -->
+        {% block contentbase %}
+        <li style="float:left">
+          <div class="dropdown">
+            <button class="dropbtn">Login</button>
+          <div class="dropdown-content">
+            <form method="POST" action="/login/req/" role="form">
+              {% csrf_token %}
+            <div class="container">
+              <label>Username</label>
+              <input type="text" placeholder="Enter Username" name="username" value="" required>
+              <label>Password</label>
+              <input type="password" placeholder="Enter Password" name="password" value="" required>
+              <button type="submit" class="main-buttons">Login</button>
+              {% block content %}
+              {% endblock %}
+            </div>
+            <div class="container">
+              <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+            </form>
+            </div>
+          </div>
+        </li>
+       {% endblock contentbase %}
+       <li style="float:right"><a class="menu-item">{% block content2 %}{% endblock %}</a></li>
+       </ul>
+
+    </div>
+    <div class="image">
+      {% load static %}
+      <img src="{% static 'css/assets/templogo.png' %}" />
+    </div>
+  <div class="testing"></div>
+
+  </body>
+</html>

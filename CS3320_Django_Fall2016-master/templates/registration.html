@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+  <div class="centered" class="container">
+      <div class="transbox">
+        <form method="post" class="pass-form" action="/add_user_info/" role="form">
+            {% csrf_token %}
+            <div class="registration">
+              <input type="hidden" name="username" value="{{ user.get_username }}">
+	            <input type="hidden" name="email" value="{{ user.get_email }}">
+              <label>Zip Code</label>
+              <input type="text" name="zipcode" required>
+              <label>What genre(s) do you play?</label>
+              <input type="text" name="genres">
+              <label>What instrument(s) do you play?</label>
+              <input type="text" name="instruments">
+              <button type="submit" class="submit-button">Submit</button>
+        </div>
+
+        </form>
+      </div>
+  </div>
+{% endblock %}

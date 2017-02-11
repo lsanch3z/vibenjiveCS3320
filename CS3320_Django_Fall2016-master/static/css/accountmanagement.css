@@ -1,0 +1,32 @@
+.account-menu ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+  margin: 0;
+  padding: 10px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: .8;
+  position: fixed;
+  border-spacing: inherit;
+}
+
+.account-menu .account-nav li {
+  font-size: 15px;
+  float: left;
+}
+
+.account-menu a.account-item {
+ display: inline-block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ padding: 20px;
+}
+
+.account-menu a.account-item:hover {
+  background-color: #111;
+  opacity: .5;
+}
